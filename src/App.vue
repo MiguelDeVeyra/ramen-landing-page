@@ -22,8 +22,8 @@ import 'aos/dist/aos.css';
 export default {
   components:{
     navbar,
+    fabLang,
     footerCred,
-    fabLang
   },
 
   created () {

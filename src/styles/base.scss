@@ -23,8 +23,10 @@ $xxl: 1367px;
 // removes default
 body {
   margin: 0;
+  padding: 0;
   font-family: "Roboto";
   color: $primaryTextColor;
+  overflow-x: hidden;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -51,3 +53,8 @@ a {
 @import "./location";
 @import "./footer";
 @import "./fablang";
+
+// prevents aos
+.home {
+  overflow: hidden;
+}

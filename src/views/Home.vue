@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <div class="heroHeader " >
-      <!-- English Version Header -->
       <div class="heroText animate__animated animate__fadeInLeft" v-if="defaultLanguage" >
         <span >ベストレストラン</span>
         <h1  >
@@ -16,7 +15,6 @@
           <span class="discoverMenu">Discover menu</span>
         </div>
       </div>
-      <!-- Japanse Version Header -->
       <div class="heroText animate__animated animate__fadeInLeft" v-if="!defaultLanguage">
         <span >Best Restaurant</span>
         <h1 >

@@ -1,40 +1,46 @@
 <template>
   <div class="home">
-    <div class="heroHeader">
-      <div class="heroText" >
-        <span v-if="defaultLanguage">ベストレストラン</span>
-        <span v-if="!defaultLanguage">Best Restaurant</span>
-        <h1 v-if="defaultLanguage">
+    <div class="heroHeader " >
+      <!-- English Version Header -->
+      <div class="heroText animate__animated animate__fadeInLeft" v-if="defaultLanguage" >
+        <span >ベストレストラン</span>
+        <h1  >
           Best <span class="blueText">ramen</span>  restaurant
         </h1>
-        <h1 v-if="!defaultLanguage">
-          ベスト <span class="blueText">ラーメン</span>  レストラン
-        </h1>
-        <p v-if="defaultLanguage">
+        <p >
           Honest ramen crafted with ethically <br>
           farmed ingredients and love
         </p>
-        <p v-if="!defaultLanguage">
+        <div class="buttonsHero">
+          <span class="makeOrder" >Make Order</span>
+          <span class="discoverMenu">Discover menu</span>
+        </div>
+      </div>
+      <!-- Japanse Version Header -->
+      <div class="heroText animate__animated animate__fadeInLeft" v-if="!defaultLanguage">
+        <span >Best Restaurant</span>
+        <h1 >
+          ベスト <span class="blueText">ラーメン</span>  レストラン
+        </h1>
+        <p >
           倫理的に育てられた食材と
           愛情で作られた正直なラーメン
         </p>
         <div class="buttonsHero">
-          <span class="makeOrder" v-if="defaultLanguage">Make Order</span>
-          <span class="makeOrder" v-if="!defaultLanguage">順序を作ります</span>
-          <span class="discoverMenu" v-if="defaultLanguage">Discover menu</span>
-          <span class="discoverMenuJap" v-if="!defaultLanguage">メニューを見つける</span>
+          <span class="makeOrder" >順序を作ります</span>
+          <span class="discoverMenuJap" >メニューを見つける</span>
         </div>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInRight">
         <img :src="ramen">
       </div>
     </div>
     
-    <div class="ourBenefits">
+    <div class="ourBenefits" >
       <svg viewBox="0 0 1440 156" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 128L80 117.3C160 107 320 85 480 96C640 107 800 149 960 154.7C1120 160 1280 128 1360 112L1440 96V0H1360C1280 0 1120 0 960 0C800 0 640 0 480 0C320 0 160 0 80 0H0V128Z" fill="#FCF4EE"/>
       </svg>
-      <div class="header">
+      <div class="header" data-aos="fade-right">
         <span v-if="defaultLanguage">私 た ち の 利 点</span>
         <span v-if="!defaultLanguage">Our benefits</span>
         <h1 v-if="defaultLanguage">
@@ -44,11 +50,11 @@
           私たちの <span>利点</span>
         </h1>
       </div>
-      <div class="container">
-          <div>
+      <div class="container" >
+          <div data-aos="fade-right">
             <img :src="ramenShop" alt="">
           </div>
-          <div class="benefitsText">
+          <div class="benefitsText" data-aos="fade-left">
             <div>
               <span class="number">1</span> 
               <h1 class="titleBenefit" v-if="defaultLanguage"> 
@@ -106,13 +112,13 @@
     </div>
 
     <div class="popularItems">
-      <div class="header">
+      <div class="header" data-aos="fade-right">
         <p v-if="defaultLanguage"> <span>Popular</span> Items</p>
         <p v-if="!defaultLanguage"> <span>人気の</span> アイテム</p>
       </div>
       <div class="container">
-        <div class="item">
-          <img :src="mastersChoice" alt="">
+        <div class="item" data-aos="fade-left">
+          <img :src="mastersChoice" alt="" >
           <div>
             <h1 v-if="defaultLanguage">The original ramen of the chef</h1>
             <h1 v-if="!defaultLanguage">シェフのオリジナルラーメン</h1>
@@ -129,7 +135,7 @@
             <img :src="makeOrder" alt="" @click="clicked()" >
           </div>
         </div>
-        <div class="item">
+        <div class="item" data-aos="fade-right">
           <img :src="veganRamen" alt="" class="mobileImage">
           <div>
             <h1 v-if="defaultLanguage">Spicy tofu mazemen</h1>
@@ -147,7 +153,7 @@
           </div>
           <img :src="veganRamen" class="desktopImage" alt="">
         </div>
-        <div class="moreButton">
+        <div class="moreButton" data-aos="zoom-in">
           <p @click="clicked" v-if="defaultLanguage">Find out more</p>
           <p @click="clicked" v-if="!defaultLanguage">詳細はこちら</p>
         </div>
@@ -161,7 +167,7 @@
       </svg>
       <div class="container">
         <div class="rowOne">
-          <div class="header">
+          <div class="header" data-aos="fade-up">
             <p class="japaneseHeader" v-if="defaultLanguage">私たちのチーム</p>
             <p class="japaneseHeader" v-if="!defaultLanguage">Meet our team</p>
             <h1 v-if="defaultLanguage">Meet our <br> <span>team</span> </h1>
@@ -176,15 +182,15 @@
 
             </p>
           </div>
-          <div class="memberOne">
+          <div class="memberOne" data-aos="zoom-in">
             <img :src="teamMemberOne" alt="">
           </div>
         </div>
-        <div class="rowTwo">
+        <div class="rowTwo" data-aos="zoom-in">
           <div class="memberTwo">
             <img :src="teamMemberTwo" alt="">
           </div>
-          <div class="memberThree">
+          <div class="memberThree" data-aos="zoom-in">
             <img :src="teamMemberThree" alt="">
           </div>
         </div>
@@ -207,26 +213,26 @@
             <h1 v-if="defaultLanguage">Our <span>Values</span></h1>
             <h1 v-if="!defaultLanguage">私たちの<span>値</span></h1>
           </div>
-          <div class="valueOne">
+          <div class="valueOne" data-aos="fade-left">
             <div class="valueOneHeader">
               <img :src="oneDottedLine" alt="">
               <h1 v-if="defaultLanguage">Honesty</h1>
               <h1 v-if="!defaultLanguage">正直</h1>
             </div>
-            <div class="valueOneText">
+            <div class="valueOneText" >
               <p v-if="defaultLanguage">
                 We craft no-nonsense <span>honest ramen</span>,
                 just great ingredients, great teqnique, slow cooking
                 and a lot of TLC.
               </p>
-              <p v-if="!defaultLanguage">
+              <p v-if="!defaultLanguage" data-aos="fade-right">
                 私たちは、ナンセンスな<span>正直なラーメン</span>、
                 素晴らしい食材、素晴らしいテクニック、
                 スロークッキング、そしてたくさんのTLCを作り上げています。
               </p>
             </div>
           </div>
-          <div class="valueTwo">
+          <div class="valueTwo" data-aos="fade-right">
             <div class="valueTwoHeader">
               <img :src="twoDottedLine" alt="">
               <h1 v-if="defaultLanguage">Quality</h1>
@@ -245,7 +251,7 @@
               
             </div>
           </div>
-          <div class="valueThree">
+          <div class="valueThree" data-aos="fade-left">
             <div class="valueThreeHeader">
               <img :src="twoDottedLine" alt="">
               <h1 v-if="defaultLanguage">Hospitality</h1>
@@ -277,7 +283,7 @@
           <h1 v-if="defaultLanguage">Kyoto</h1>
           <h1 v-if="!defaultLanguage">京 都</h1>
           <div class="infoRow">
-            <div class="infoRowContent">
+            <div class="infoRowContent" data-aos="fade-down">
               <h1 v-if="defaultLanguage">Where?</h1>
               <h1 v-if="!defaultLanguage">どこ?</h1>
               <p v-if="defaultLanguage">
@@ -287,7 +293,7 @@
                 等持寺町中京区34-1
                 </p>
             </div>
-            <div class="infoRowContent">
+            <div class="infoRowContent" data-aos="fade-down">
               <h1 v-if="defaultLanguage">When?</h1>
               <h1 v-if="!defaultLanguage">When?</h1>
               <p v-if="defaultLanguage">
@@ -305,13 +311,13 @@
             </div>
           </div>
           <div class="infoRow">
-            <div class="infoRowContent">
+            <div class="infoRowContent" data-aos="fade-up">
               <h1 v-if="defaultLanguage">Contact Us!</h1>
               <h1 v-if="!defaultLanguage">お問い合わせ!</h1>
               <p class="email">info@ramen.koyoto.com</p>
               <p>+81 50 34 66 19 86</p>
             </div>
-            <div class="infoRowContent">
+            <div class="infoRowContent" data-aos="fade-up">
               <h1 v-if="defaultLanguage">Social Life</h1>
               <h1 v-if="!defaultLanguage">社会生活</h1>
               <p v-if="defaultLanguage">Discover our life</p>

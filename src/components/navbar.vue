@@ -2,7 +2,7 @@
   <div class="navbar">
     <!-- md nav and up -->
     <div class="desktopNav">
-        <div class="logoContainer">
+        <div class="logoContainer ">
             <!-- :height is the same as v-bind -->
             <router-link to="/">
                 <navbarLogo :height="55"/>
@@ -69,7 +69,7 @@ export default {
         const defaultLanguage = computed(()=>store.state.defaultLanguage)
 
         function switchLanguage(){
-            store.commit('LANG_SWITCH', !defaultLanguage.value)
+            store.commit('LANG_SWITCH', !defaultLanguage.value);
         }
 
         return{

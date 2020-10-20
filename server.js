@@ -1,6 +1,6 @@
 const express = require('express');
 const serveStatic = require('serve-static');
-const history = require('history');
+const history = require('connect-history-api-fallback');
 const enforce = require('express-sslify');
 
 const app = express();

@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <navbar @swtch-lang="switchLang"/>
+    <fabLang/>
+    <router-view />
+    <footerCred/>
+  </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import navbar from './components/navbar'
+import footerCred from './components/footer'
+import fabLang from './components/fabMobile'
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    navbar,
+    footerCred,
+    fabLang
+  },
+
+  setup(){
+
+    const store = useStore();
+    const language = computed(() => store.state.language);
+
+    return{
+      language,
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+
 </style>

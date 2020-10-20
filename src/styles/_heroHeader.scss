@@ -1,0 +1,126 @@
+.heroHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 5vw;
+  padding-bottom: 5vh;
+  background: #fcf4ee;
+
+  .heroText {
+    span {
+      font-weight: bold;
+      color: #ff694a;
+    }
+
+    h1 {
+      font-size: 70px;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      .blueText {
+        color: #5c77de;
+      }
+    }
+
+    p {
+      margin-top: 2em;
+      margin-bottom: 3em;
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+    }
+
+    .buttonsHero {
+      display: block;
+
+      .makeOrder {
+        display: inline;
+        font-size: 18px;
+        font-weight: normal;
+        padding: 12px;
+        letter-spacing: 0.12em;
+        border-radius: 1em 0 1em 0;
+        cursor: pointer;
+        margin-left: 1em;
+        color: #fff;
+        background-color: #ff694a;
+      }
+
+      .discoverMenu {
+        margin-left: 2em;
+        color: #000;
+        cursor: pointer;
+        letter-spacing: 0.12em;
+      }
+
+      .discoverMenuJap {
+        margin-left: 2em;
+        color: #000;
+        cursor: pointer;
+        letter-spacing: 0.12em;
+
+        @media (max-width: $md) {
+          font-size: 0.8em;
+        }
+      }
+
+      @media (max-width: $lg) {
+        .makeOrder {
+          margin-left: 0;
+        }
+      }
+    }
+
+    // main text
+    @media (max-width: $md) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 3.5em;
+      margin-bottom: 5em;
+    }
+
+    @media (max-width: $lg) {
+      h1 {
+        font-size: 3.5em;
+      }
+    }
+
+    @media (min-width: $xl) {
+      h1 {
+        font-size: 70px;
+      }
+    }
+
+    @media (min-width: $xxl) {
+      h1 {
+        font-size: 120px;
+      }
+    }
+  }
+
+  // ramen image styles
+  img {
+    margin-right: 1.5em;
+    height: 550px;
+
+    @media (max-width: $md) {
+      display: none;
+    }
+
+    @media (max-width: $lg) {
+      height: 400px;
+    }
+
+    @media (min-width: $xl) {
+      margin-right: 1.5em;
+      height: 550px;
+    }
+    @media (min-width: $xxl) {
+      margin-top: 5em;
+      height: 650px;
+      margin-right: 1.5em;
+      margin-left: 200px;
+    }
+  }
+}

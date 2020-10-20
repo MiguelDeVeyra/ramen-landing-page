@@ -1,0 +1,100 @@
+.team {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5vw;
+    margin-bottom: 3em;
+
+    .rowOne {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      @media (max-width: $md) {
+        grid-template-columns: 1fr;
+      }
+      .header {
+        display: inline-block;
+        .japaneseHeader {
+          color: $secondaryTextColor;
+          margin-bottom: 0;
+          font-weight: bold;
+        }
+        h1 {
+          font-size: 3em;
+          font-weight: bold;
+          margin: 0.3em 0;
+
+          span {
+            color: $thirdTextColor;
+          }
+        }
+        .shortTeamDescription {
+          font-size: 1.2em;
+          font-weight: 400;
+          margin-top: 0;
+        }
+      }
+
+      .memberOne {
+        display: inline-block;
+
+        @media (max-width: $md) {
+          margin-left: 0;
+        }
+
+        img {
+          height: 500px;
+        }
+
+        @media (max-width: $md) {
+          margin-left: auto;
+          margin-right: auto;
+          img {
+            height: 300px;
+          }
+        }
+      }
+    }
+
+    .rowTwo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 3em;
+
+      @media (max-width: $md) {
+        grid-template-columns: 1fr;
+      }
+
+      .memberTwo {
+        counter-increment: grid-item;
+        img {
+          height: 500px;
+        }
+
+        @media (max-width: $md) {
+          margin-left: auto;
+          margin-right: auto;
+          img {
+            margin-top: 5em;
+            height: 300px;
+          }
+        }
+      }
+      .memberThree {
+        margin-left: auto;
+        img {
+          margin-top: 5em;
+          height: 450px;
+        }
+
+        @media (max-width: $md) {
+          margin-left: auto;
+          margin-right: auto;
+          img {
+            height: 300px;
+          }
+        }
+      }
+    }
+  }
+}

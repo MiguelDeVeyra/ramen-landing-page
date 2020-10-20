@@ -1,0 +1,26 @@
+.fabLang {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: $secondaryTextColor;
+  box-shadow: 0 6px 10px 0 #666;
+  transition: all 0.1s ease-in-out;
+
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  @media (min-width: $md) {
+    display: none;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0.1em;
+  }
+}

@@ -1,0 +1,17 @@
+.slide-fade-enter-active {
+  transition: all 0.4s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.6s;
+}
+
+// transform tells where to transition
+// X is default left to right, make negative for right to left
+// Y is default bottom to top, make negative for top to bottom
+// opacity is for visuals so it dont look dumb
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(50px);
+  opacity: 0;
+}
